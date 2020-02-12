@@ -1,0 +1,174 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Quiz_app",
+		"_postman_id": "e5b3a0c1-3b6b-dd38-e564-04187e445091",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:9000/show_questions",
+			"request": {
+				"url": "http://127.0.0.1:9000/show_questions",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic QWRtaW5pc3RyYXRvcjphZG1pbjEyMw==",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "auth",
+						"value": "ODQ4NjIwNDExNjQwhIGS5pOdfGwZav8x4lGyrrJ_J-xTpnT4",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"last_rel_date\":\t\"2019-02-22\" , \"rel_date\": \"2019-02-23\", \"rel_to_date\": \"2019-02-25\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:9000/show_choices",
+			"request": {
+				"url": "http://127.0.0.1:9000/show_choices",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic QWRtaW5pc3RyYXRvcjphZG1pbjEyMw==",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "auth",
+						"value": "ODQ4NjIwNDExNjQwhIGS5pOdfGwZav8x4lGyrrJ_J-xTpnT4",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"last_rel_date\":\t\"2019-02-22\" , \"rel_date\": \"2019-02-23\", \"rel_to_date\": \"2019-02-25\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:9000/add_choice",
+			"request": {
+				"url": "http://127.0.0.1:9000/add_choice",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic QWRtaW5pc3RyYXRvcjphZG1pbjEyMw==",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "auth",
+						"value": "ODQ4NjIwNDExNjQwhIGS5pOdfGwZav8x4lGyrrJ_J-xTpnT4",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"11\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:9000/show_pupil",
+			"request": {
+				"url": "http://127.0.0.1:9000/show_pupil",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic QWRtaW5pc3RyYXRvcjphZG1pbjEyMw==",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "auth",
+						"value": "ODQ4NjIwNDExNjQwhIGS5pOdfGwZav8x4lGyrrJ_J-xTpnT4",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"last_rel_date\":\t\"2019-02-22\" , \"rel_date\": \"2019-02-23\", \"rel_to_date\": \"2019-02-25\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:9000/pupil_register",
+			"request": {
+				"url": "http://127.0.0.1:9000/pupil_register",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic QWRtaW5pc3RyYXRvcjphZG1pbjEyMw==",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "auth",
+						"value": "ODQ4NjIwNDExNjQwhIGS5pOdfGwZav8x4lGyrrJ_J-xTpnT4",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"first_name\": \"michel\", \"sur_name\": \"jordan\", \"email_add\": \"sample@gmail.com\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

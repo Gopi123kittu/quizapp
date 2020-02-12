@@ -1,0 +1,234 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Welcome to Quiz_App’s documentation! &#8212; Quiz_App V0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-quiz-app-s-documentation">
+<h1>Welcome to Quiz_App’s documentation!<a class="headerlink" href="#welcome-to-quiz-app-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Create an application which meets the following requirements:</p>
+<p>A teacher of a year 10 math class would like a simple application which gives them the ability to test pupils using multiple choice questions, and also have the ability to determine the pass or fail rate for those that take the tests. The application should allow for pupils to register and take the created test questions, following on from the registration process. Once a pupil has taken the test, that pupil should be notified of whether they have passed or failed. When pupils have taken the tests, the teacher should have the ability to see all pupils and their related test scores, in one single location.</p>
+<p>The application should provide the following:</p>
+<p>For teachers:</p>
+<blockquote>
+<div>The ability to add multiple choice questions, of varying difficulties, with 3 possible solutions and potentially multiple possible answers
+The ability to define a pass/fail percentage for pupils taking the tests
+The ability to view all pupils that have taken the tests and their respective scores</div></blockquote>
+<p>For Pupils:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>The ability to register to take a test, with at least the following details:</dt>
+<dd>First Name
+Surname
+Email address</dd>
+</dl>
+<p>The ability to take a test
+The ability to receive a notification of whether they have passed or failed</p>
+</div></blockquote>
+</div>
+<div class="section" id="functions">
+<h1>Functions:<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-myapp"></span><dl class="function">
+<dt id="myapp.add_ques_choice">
+<code class="descclassname">myapp.</code><code class="descname">add_ques_choice</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/myapp.html#add_ques_choice"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#myapp.add_ques_choice" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function accepts question id 
+and multiple choice ids</p>
+<p>Note more than 3 nor less than 3 choices cannot be
+assigned</p>
+<p>input format:
+{
+“question_id”: 1,
+“choice_id”: [2, 5, 10]
+}</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="myapp.assign_ques_test">
+<code class="descclassname">myapp.</code><code class="descname">assign_ques_test</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/myapp.html#assign_ques_test"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#myapp.assign_ques_test" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function accepts question id 
+and test id and teacher id who creates the test</p>
+<p># questions can be n number for a test</p>
+<p>input format:
+{
+“question_id”: [1,2,3,4,5],
+“test_id”: 1,
+“teacher_id”: 1
+}</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="myapp.show_questions_choices">
+<code class="descclassname">myapp.</code><code class="descname">show_questions_choices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/myapp.html#show_questions_choices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#myapp.show_questions_choices" title="Permalink to this definition">¶</a></dt>
+<dd><p>This methid will list of all questions and their choices</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="myapp.show_submitted_tests">
+<code class="descclassname">myapp.</code><code class="descname">show_submitted_tests</code><span class="sig-paren">(</span><em>test_id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/myapp.html#show_submitted_tests"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#myapp.show_submitted_tests" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function recieves a test id 
+and return backs with actual text of the data</p>
+<p>It collects the test data from test_submission table
+and pairs the ques and answers</p>
+<p>test_ans syntax: {test_id: [{ques: ans}, {ques: ans}]}
+test_ans: {1: [{1:2}, {2:4}]}</p>
+<p>Then calls the ‘show_test_questions’ with test_id
+to get actual textual represenation of the test_ans
+to get below format</p>
+<p>output format:
+{“ques”: “pupil_entered_choice”}</p>
+<p>ex output:
+{“5-2”: 3, “10*10”: 10}</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="myapp.show_test_questions">
+<code class="descclassname">myapp.</code><code class="descname">show_test_questions</code><span class="sig-paren">(</span><em>test_id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/myapp.html#show_test_questions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#myapp.show_test_questions" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function helps to display 
+the questions and their choice 
+with the given test id</p>
+<p>input_data
+{
+“test_id”: 1
+}</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="myapp.test_result">
+<code class="descclassname">myapp.</code><code class="descname">test_result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/myapp.html#test_result"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#myapp.test_result" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function saves the results of the test
+by the teacher with status and perc with pupil id</p>
+<p>input format:
+{
+“pupil_id”: 1,
+“test_id”: 1,
+“status”: “pass”,
+“test_data”: [{“ques_1”: “right ans”}, {“ques_2”: “right_ans”}, {“ques_3”: “wrong_ans”}],
+“correct_answers”: [“ques_1”, “ques_2”],
+“teacher_id”: 1
+}</p>
+<p>percentage will be internally caluclated
+100.0 * ques_ans/total_ques</p>
+<p>ex: 100.0 * 3/5 = 60.0</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="myapp.test_sumbission">
+<code class="descclassname">myapp.</code><code class="descname">test_sumbission</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/myapp.html#test_sumbission"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#myapp.test_sumbission" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function accepts question id and selected choice id
+and test id and teacher id who creates the test and pupil 
+id who writes the test</p>
+<p>input format:
+{
+“question_ans”: {“1”: 2, “2”: 3, “4”:1},
+“test_id”: 1,
+“teacher_id”: 1
+“pupil_id”: 1
+}</p>
+</dd></dl>
+
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">Quiz_App</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Gopi J.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,70 @@
+# MathClass Exam
+
+## Project Description
+
+Create an application which meets the following requirements:
+
+A teacher of a year 10 math class would like a simple application which gives them the ability to test pupils using multiple choice questions, and also have the ability to determine the pass or fail rate for those that take the tests. The application should allow for pupils to register and take the created test questions, following on from the registration process. Once a pupil has taken the test, that pupil should be notified of whether they have passed or failed. When pupils have taken the tests, the teacher should have the ability to see all pupils and their related test scores, in one single location.
+
+The application should provide the following:
+
+**For teachers:**
+
+-   The ability to add multiple choice questions, of varying difficulties, with 3 possible solutions and potentially multiple possible answers
+-   The ability to define a pass/fail percentage for pupils taking the tests
+-   The ability to view all pupils that have taken the tests and their respective scores
+
+**For Pupils:**
+
+-   The ability to register to take a test, with at least the following details:
+-   First Name
+-   Surname
+-   Email address
+-   The ability to take a test
+-   The ability to receive a notification of w
+
+# Project structure
+```
+.
++-- docs/
+|	+-- _build
+|	|	+-- /html
+|	|	|	+-- index.html <-- sphinx doc home page, click to get doc's
+|	+-- _static
+|	+-- tempaltes
++-- quiz
+|   +-- myapp.py
+|   +-- db.py
+|   +-- models.py
+| 	+-- Dockerfile
+| 	+-- requirements.txt
++-- _includes
+```
+
+## Project Documentation
+
+For further Documentation of the project , please click on /docks/_build/index.html 
+which tells more about the coding part.
+
+### Python modules 
+
+1) Sqlalchemy
+2) Bottle
+
+
+## API 
+The app is fully confiured with API calls with PUT, DELETE,GET,POST methods.
+Collection of Api calls can be find in **docs/Quiz_app.postman_collection.json**
+
+##	Running in Docker
+
+Prequisites:
+	Make sure docker is installed
+
+1) Go to quiz/
+2) open cmd propmt in quiz/ folder
+3) Then run: **docker buid -t quizapp .**
+4) Once the image is created
+5) check image with **docker images**
+6) Then run the image as: **docker run -d -p 9000:8080 quizapp**
+7) To check logs: **docker logs container_id**
